@@ -1,0 +1,11 @@
+# Ignore environment files
+aiAgent_API.env
+
+# Ignore macOS system files
+.DS_Store
+
+# Ignore API key files
+api key.rtf
+
+# Ignore all .env files
+*.env

@@ -6,12 +6,14 @@ import { Agent, run }  from '@openai/agents';
 const historyTutorAgent = new Agent({
     name: 'History Tutor',
     instructions: 'You provide assistance with historical queries. Explain important events and context clearly.',
+    model: 'gpt_3.5-turbo',
 });
 
 const mathTutorAgent = new Agent({
     name: 'Math Tutor',
     instructions: 
     'You provide help with math problems. Explain your reasoning at each step and include examples.',
+    model: 'gpt_3.5-turbo',
 });
 
     // Handoffs
@@ -23,7 +25,7 @@ const triageAgent = Agent.create({
 });
 
 async function main() {
-    const result = await run (triageAgent, 'What is 2/6?');
+    const result = await run (triageAgent, 'What is the capital of Italy?');
     console.log(result.finalOutput);
 }
 

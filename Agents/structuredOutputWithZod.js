@@ -10,5 +10,5 @@ const CalendarEvent = z.object({
 const extractor = new Agent({
     name: 'Calendor extractor',
     instructions: 'Extract calendar events from the supplied text.',
-    outputType: CalendarType,
+    outputType: CalendarEvent,
 });

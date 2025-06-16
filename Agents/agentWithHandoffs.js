@@ -28,4 +28,11 @@ async function main (){
 
 main().catch(console.error);
 
+/**
+ * Output in terminal:
+ * Thank you for reaching out regarding your refund request. I’m here to help!
 
+    Could you please provide your order number or the email address associated with your purchase? This will allow me to locate your order and process your refund as quickly as possible.
+
+    If there’s anything specific about your purchase you’d like to mention, please let me know.
+ */

@@ -17,3 +17,11 @@ const agent = new Agent({
     modelSetting: { toolChoice: 'auto' },
 });
 
+/**
+ * You can force tool use withh **modelSettings.tool_choice** :
+ * 
+ * 1- 'auto' (default) - the LLM decides whether to use a tool.
+ * 2- 'required' - the LLM must call a tool (it can choose which one).
+ * 3- 'none' - the LLM must not call a tool.
+ * 4- A specific tool name, eg: 'Calculator' - the LLM must call the that particular tool.
+ */

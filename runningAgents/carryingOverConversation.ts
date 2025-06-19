@@ -14,7 +14,7 @@ async function userSays(text: string) {
 
     thread = result.history;
     console.log(`User: ${text}`);
-    console.log(`Assistant; ${result.finalOutput}`);
+    console.log(`Assistant: ${result.finalOutput}`);
     return result.finalOutput;
 }
 

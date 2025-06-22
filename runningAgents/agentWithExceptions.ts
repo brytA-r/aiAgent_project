@@ -13,5 +13,19 @@ const guardrailAgent = new Agent({
 
 const unstableGuardrail: InputGuardrail = {
     name: 'Math Homework Guardrail (unstable)',
-    
-}
+    execute: async () => {
+        throw new Error('Something is wrong!');
+    },
+};
+
+const fallbackGuardrail: InputGuardrail = {
+    name: 'Math Homework Guardrail (fallback)',
+    execute: async ({ input, context }) => {
+        const result = await run(guardrailAgent, input, { context});
+        return {
+            outputInfo: result.finalOutput,
+            tripwireTriggered: result.finalOutput?.isMathHomework ?? false,
+        };
+    },
+};
+

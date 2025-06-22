@@ -44,6 +44,24 @@ async function main() {
     } catch (e) {
         if (e instanceof GuardrailExecutionError) {
             console.error(`Guardraiò execution failed: ${e}`);
+            // If you want to retry the execution with different settings,
+            // you can reuse the runner's state this way:
+
+            if (e.state) {
+                try {
+                    agent.inputGuardrails = [fallbackGuardrail];
+                    const result = await run(agent, e.state);
+                    console.log(result.finalOutput);
+                } catch (ee) {
+                    if(ee instanceof InputGuardrailTripwireTriggered) {
+                        console.log('Math homework guardrail tripped');
+                    }
+                }
+            } else {
+                throw e;
+            }
         }
     }
  }
+
+ main().catch(console.error);

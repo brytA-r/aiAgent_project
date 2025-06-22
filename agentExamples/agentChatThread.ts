@@ -53,6 +53,7 @@ async function main () {
 
             console.log(`[${latestAgent.name}] ${result.finalOutput}`);
 
+            // keeps track of the current agent names.
             if(result.lastAgent) {
                 latestAgent = result.lastAgent;
             }

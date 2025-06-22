@@ -43,7 +43,7 @@ async function main() {
         console.log(result.finalOutput);
     } catch (e) {
         if (e instanceof GuardrailExecutionError) {
-            console.error(`Guardraiò execution failed: ${e}`);
+            console.error(`Guardrail execution failed: ${e}`);
             // If you want to retry the execution with different settings,
             // you can reuse the runner's state this way:
 

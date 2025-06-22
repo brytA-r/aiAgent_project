@@ -29,3 +29,10 @@ const fallbackGuardrail: InputGuardrail = {
     },
 };
 
+const agent = new Agent({
+    name: 'Customer Support agent',
+    instructions:
+    'You are a customer support agent. You help customers with their questions.',
+    inputGuardrails: [unstableGuardrail],
+});
+

@@ -1,5 +1,5 @@
 import 'dotenv/config';
-import { Agent, run, GuadrailExecutionError, InputGuadrail, InputGuardrailTripwireTriggered, } from '@openai/agents';
+import { Agent, run, GuardrailExecutionError, InputGuardrail, InputGuardrailTripwireTriggered, } from '@openai/agents';
 import { z } from 'zod';
 
 const guardrailAgent = new Agent({
@@ -36,3 +36,14 @@ const agent = new Agent({
     inputGuardrails: [unstableGuardrail],
 });
 
+async function main() {
+    try {
+        const input = "Hello, can you help me solve for x: 2x + 3 = 11?";
+        const result = await run(agent, input);
+        console.log(result.finalOutput);
+    } catch (e) {
+        if (e instanceof GuardrailExecutionError) {
+            console.error(`Guardraiò execution failed: ${e}`);
+        }
+    }
+ }

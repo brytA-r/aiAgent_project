@@ -11,3 +11,12 @@ const refundAgent = new Agent({
     }),
 });
 
+const orderAgent = new Agent({
+    name: 'Order Agent',
+    instructions: 
+    'You are an order agent. You are responsible for processing orders.',
+    outputType: z.object({
+        orderId: z.string,
+    }),
+});
+

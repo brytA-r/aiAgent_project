@@ -27,3 +27,5 @@ const triageAgent = Agent.create({
     handoffs: [refundAgent, orderAgent],
 });
 
+const result = await run(triageAgent, 'I need a refund for my order');
+const output = result.finalOutput;

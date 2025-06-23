@@ -7,7 +7,7 @@ const refundAgent = new Agent({
     instructions: 
     'You are a refund agent. You are responsible for refunding customers.',
     outputType: z.object({
-        refundApproved: z.boolean,
+        refundApproved: z.boolean(),
     }),
 });
 
@@ -16,7 +16,7 @@ const orderAgent = new Agent({
     instructions: 
     'You are an order agent. You are responsible for processing orders.',
     outputType: z.object({
-        orderId: z.string,
+        orderId: z.string(),
     }),
 });
 
@@ -28,4 +28,4 @@ const triageAgent = Agent.create({
 });
 
 const result = await run(triageAgent, 'I need a refund for my order');
-const output = result.finalOutput;
+console.log(result.finalOutput);

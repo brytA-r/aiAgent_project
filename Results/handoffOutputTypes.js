@@ -20,3 +20,10 @@ const orderAgent = new Agent({
     }),
 });
 
+const triageAgent = Agent.create({
+    name: 'Triage Agent',
+    instructions:
+    'You are a triage agent. You are responsible for triagging customer issues.',
+    handoffs: [refundAgent, orderAgent],
+});
+

@@ -20,3 +20,5 @@ for( let i = 0; i < 10; i++) {
     history = result.history;
     history.push(user('How about now?'));
 }
+
+// output logs on openai api platform, code works 👍

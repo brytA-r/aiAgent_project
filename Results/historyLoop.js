@@ -7,3 +7,8 @@ const agent = new Agent({
     'You are helpful assistant knowledgeable about recent AGI research.',
 });
 
+let hsitory: AgentInputItem[] =[
+    // initial message
+    user('Are we there yet?')
+];
+

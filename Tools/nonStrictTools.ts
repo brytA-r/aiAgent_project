@@ -12,5 +12,12 @@ const looseTool = tool({
         properties: { text: { type: 'string' }},
         required: ['text'],
         additionalProperties: true,
-    }
+    },
+
+    execute: async (input) => {
+        if(typeof input !== 'object' || input === null || !('text' in input)) {
+            return 'Invalid input. Please try again';
+        }
+        return (input as LooseToolInput).text;
+    },
 });

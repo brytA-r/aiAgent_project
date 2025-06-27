@@ -4,3 +4,8 @@ const summarizer = new Agent({
     name: 'Summarizer',
     instructions: 'Generate a concise summary of the supplied text',
 });
+
+const summarizerTool = summarizer.asTool({
+    toolName: 'summarize_text',
+    toolDescription: 'Generate a concise summary of a supplied text',
+});

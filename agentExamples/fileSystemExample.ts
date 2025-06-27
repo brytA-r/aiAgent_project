@@ -14,7 +14,7 @@ async function main() {
     await mcpServer.connect(); // Connect to the MCP server
 
     try {
-        await withTrace('MCP filesystem Example' async () => { // Run the agent with tracing enabled
+        await withTrace('MCP filesystem Example', async () => { // Run the agent with tracing enabled
             const agent = new Agent({ 
                 name: 'MCP Assistant',
                 instructions:

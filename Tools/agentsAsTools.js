@@ -9,3 +9,8 @@ const summarizerTool = summarizer.asTool({
     toolName: 'summarize_text',
     toolDescription: 'Generate a concise summary of a supplied text',
 });
+
+const mainAgent = new Agent({
+    name: 'Research Assistant',
+    tools: [summarizerTool],
+});

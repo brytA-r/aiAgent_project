@@ -10,4 +10,17 @@ async function main() {
         name :'file_system-example',
         fullCommand: `npx -y @modelcontextprotocol/mcp_server ${sampleDir}`,
     });
+    //
+    await mcpServer.connect(); // Connect to the MCP server
+
+    try {
+        await withTrace('MCP filesystem Example' async () => { // Run the agent with tracing enabled
+            const agent = new Agent({ 
+                name: 'MCP Assistant',
+                instructions:
+                'Use the tools to read the filesystem and answer questions based on those files. If you are unable to find any Files, you can say so instead of assuming they existsSync.',
+                mcpServers: [mcpServer],
+            })
+        })
+    }
 }

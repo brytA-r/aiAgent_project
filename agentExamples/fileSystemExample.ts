@@ -20,7 +20,13 @@ async function main() {
                 instructions:
                 'Use the tools to read the filesystem and answer questions based on those files. If you are unable to find any Files, you can say so instead of assuming they existsSync.',
                 mcpServers: [mcpServer],
-            })
+            });
+            // Run the agent with a specific message
+            let message = 'Read the file "sample.txt" and summarize it.';
+            console.log(`Running: ${message}`); 
+        
+            let result = await run(agent, message);
+            console.log(result.finalOutput); // Output the final result
         })
     }
 }

@@ -24,9 +24,11 @@ async function main() {
             // Run the agent with a specific message
             let message = 'Read the file "sample.txt" and summarize it.';
             console.log(`Running: ${message}`); 
-        
             let result = await run(agent, message);
             console.log(result.finalOutput); // Output the final result
+
+            message = 'What is my #1 favorite color?';
+            console.log(``)
         })
     }
 }
